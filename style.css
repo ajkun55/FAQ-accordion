@@ -1,0 +1,138 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Light-pink: hsl(275, 100%, 97%);
+    --clr-Grayish-purple: hsl(292, 16%, 49%);
+    --clr-Dark-purple: hsl(292, 42%, 14%);
+    --fw-6: 600;
+    --fw-7: 700;
+}
+
+@font-face{
+    font-family: "Work Sans";
+    src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+body{
+    min-height: 100vh;
+    font-family: "Work Sans";
+    font-weight: 400;
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-color: var(--clr-Light-pink);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    line-height: 1.5;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: clamp(30%, 600px, 90%);
+    background-color: var(--clr-White);
+    padding: 2.5rem;
+    display: grid;
+    border-radius: 0.8rem;
+}
+
+.title{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.title h1{
+    font-size: 3rem;
+    font-weight: var(--fw-7);
+    color: var(--clr-Dark-purple);
+}
+
+.accordion{
+    border: none;
+    background: none;       
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.accordion-title{
+    font-weight: var(--fw-6);
+    font-size: 0.95rem;
+    color: var(--clr-Dark-purple);
+    text-align: start;
+}
+
+.accordion-title:hover{    
+    color: rgb(168, 42, 231);
+}
+
+.hide{
+    display: none;
+}
+
+.active .hide{
+    display: block;
+}
+
+.active .show{
+    display: none;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-block-end: 1rem;
+    color: var(--clr-Grayish-purple);
+}
+
+.answer p{
+    margin-block: 1rem;
+}
+
+#first-answer{
+    max-height: none;
+}
+
+
+.faq{
+    border-bottom: 2px solid var(--clr-Light-pink);
+    margin-block: 0.5rem;
+}
+
+.no-border{
+    border: none;
+}
+
+@media (width < 400px){
+    body{
+        font-size: 13px;
+    }
+    .card{
+        padding: 1rem;
+    }
+    .title h1{
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
